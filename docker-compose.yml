@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  remote_ubuntu:
+    image: ubuntu_ssh:latest
+    ports:
+      - "22:22"
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
