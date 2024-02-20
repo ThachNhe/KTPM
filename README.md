@@ -45,3 +45,16 @@
 
     - Dockerfile này chứa os base ubuntu ở version mới nhất, tiến hành cập nhật repo apt và cài package openssh-server, đồng thời config SSH lại sao cho có thể đăng nhập được bằng tài khoản root mà không cần SSH-key. Tạo tài khoản thachdinh và gán mật khẩu: 010203.
     - File yaml dưới đây mô tả đang sử dụng docker-compose version 3, định nghĩa service remote_ubuntu dùng image mà ta vừa tạo là ubuntu_ssh, NAT port với host là 22. tdin_open: true và --tty cho phép tương tác với container thông qua terminal.
+5. Unix, Linux, BSD, *nix
+   ## Unix:
+   Là hệ điều hành được phát triển bởi Ken Thompson, Dennis Ritchie và đồng nghiệp vào những năm 1970.
+   Thông thường, Unix được sử dụng trong enterprise-level servers, các công ty lớn vì hiệu năng cao và thiết kế hướng đa nhiệm (multi-tasking-oriented design). Ngoài ra, Unix có thể hỗ trợ đa người dùng trên cùng một máy, không kể đó là kết nối từ xa hay kết nối trực tiếp.
+   Cả Internet là WWW (World Wide Web) đều được xây dựng dựa trên Unix.
+   ## Linux:
+   Là nhân hệ điều hành. Một số hệ điều hành mã nguồn mở được xây dựng dựa trên nhân Linux: Ubuntu, Debian, Red Hat,.... Linux có cấu trúc tương đồng với Unix (Unix-like), được xây dựng trên nhân Linux.
+   Khác với Unix, Linux thường được sử dụng trên máy cá nhân.
+   Linux thường được sử dụng trong: server applications, software development, cloud computing, game development.
+   ## BSD (Berkeley Software Distribution)
+   Là một discontinued, Unix-like OS, với nhân riêng và tệp người dùng riêng biệt. Được phát triển dựa trên Research Unix.
+   BSD bao gồm các phiên bản: FreeBSD, OpenBSD, NetBSD, DragonFly BSD.
+   ## *nix: là thuật ngữ viết tắt chỉ những Unix-like OS.
