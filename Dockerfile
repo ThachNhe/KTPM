@@ -1,12 +1,15 @@
-FROM ubuntu:latest
+FROM alpine:latest
 
-RUN apt update && apt install -y openssh-server
-RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN apk add --no-cache xvfb x11vnc xfce4 openssl bash sudo
 
-RUN  useradd -rm -d /home/thachdinh -s /bin/bash -g root -G sudo -u 1000 thachdinh && \
-    echo 'thachdinh:010203' | chpasswd && \
-    echo 'root:010203' | chpasswd
+RUN adduser -D -s /bin/bash thachdinh && echo "thachdinh:testvnc" | chpasswd
+USER thachdinh
 
-EXPOSE 22
+RUN mkdir -p /home/thachdinh/.vnc && x11vnc --storepasswd testvnc /home/thachdinh/.vnc/passwd
 
-ENTRYPOINT service ssh start && bash
+ENV DISPLAY :99 
+ENV RESOLUTION 1920x1080x24
+
+COPY entry.sh /
+
+CMD ["/entry.sh"]
